@@ -1,0 +1,6 @@
+{
+  "name": "wp-graphql-wp-shopify",
+  "version": "0.0.1",
+  "description": "A WP GraphQL extension that adds support for WP Shopify",
+  "author": "Caleb Barnes"
+}
