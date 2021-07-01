@@ -1,5 +1,5 @@
 # wp-graphql-wp-shopify
-A WP GraphQL extension that adds support for WP Shopify
+A WordPress GraphQL extension that adds support for [WP Shopify](https://wordpress.org/plugins/wpshopify/)
 
 Registers post types `wps_product` as Product and `wps_collection` as Collection in WP GraphQL.
 
@@ -7,7 +7,7 @@ Adds `shopifyProductId` field to product and `shopifyCollectionId` to collection
 
 example product query:
 
-```
+```javascript
 {
   product {
     shopifyProductId
@@ -15,7 +15,7 @@ example product query:
 }
 ```
 example collection query:
-```
+```javascript
 {
   collection {
     shopifyCollectionId
@@ -26,13 +26,19 @@ example collection query:
 
 ## Using with [gatsby-source-shopify](https://github.com/gatsbyjs/gatsby-source-shopify) and [gatsby-source-wordpress](https://www.gatsbyjs.com/plugins/gatsby-source-wordpress/)
 
-Using [Gatsby's schema customization API](https://www.gatsbyjs.com/docs/reference/graphql-data-layer/schema-customization/)
+Using [Gatsby's schema customization API](https://www.gatsbyjs.com/docs/reference/graphql-data-layer/schema-customization/) the following example is using the @link directive to create foreign-key relations between the Shopify and WP Shopify nodes.
 
-```
+
+
+```javascript
+// gatsby-node.js
+
+// links the ShopifyProducts from the `gatsby-source-shopify`
+// to the wpProduct { product } field in `gatsby-source-wordpress`
+
 exports.createSchemaCustomization = ({ actions, schema }) => {
-  // links the ShopifyProducts from the `gatsby-source-shopify`
-  // to the wpProduct { product } field in `gatsby-source-wordpress`
   const { createTypes } = actions
+  
   const typeDefs = [
     /* GraphQL */ `
       type WpProduct {
@@ -54,6 +60,7 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
       }
     `
   ]
+  
   createTypes(typeDefs)
 }
 ```
