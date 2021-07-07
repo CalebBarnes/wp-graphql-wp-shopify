@@ -3,7 +3,7 @@
  * Plugin Name: WP GraphQL for WP Shopify
  * Plugin URI: 
  * Description: A WP GraphQL extension that adds support for WP Shopify
- * Version: 0.1
+ * Version: 0.0.2
  * Author: Caleb Barnes
  * Author URI: https://github.com/CalebBarnes/wp-graphql-wp-shopify
  */
