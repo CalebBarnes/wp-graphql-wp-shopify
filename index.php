@@ -5,7 +5,7 @@
  * Description: A WP GraphQL extension that adds support for WP Shopify
  * Version: 0.1
  * Author: Caleb Barnes
- * Author URI: https://github.com/CalebBarnes
+ * Author URI: https://github.com/CalebBarnes/wp-graphql-wp-shopify
  */
 
 
